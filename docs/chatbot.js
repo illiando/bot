@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const userInput = document.getElementById('user-input');
     const messages = document.getElementById('messages');
 
-    const apiKey = 'YOUR_API_KEY'; // Замените на ваш API ключ
+    const apiKey = ''; // Замените на ваш API ключ
 
     sendButton.addEventListener('click', () => {
         const userText = userInput.value.trim();
