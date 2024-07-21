@@ -3,17 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const userInput = document.getElementById('user-input');
     const messages = document.getElementById('messages');
 
-    let knowledgeBase = {};
-
-    // Загрузка базы знаний
-    fetch('https://illiando.github.io/bot/knowledge_base.json')
-        .then(response => response.json())
-        .then(data => {
-            knowledgeBase = data;
-        })
-        .catch(error => {
-            console.error('Ошибка загрузки базы знаний:', error);
-        });
+    const apiKey = 'YOUR_API_KEY'; // Замените на ваш API ключ
 
     sendButton.addEventListener('click', () => {
         const userText = userInput.value.trim();
@@ -38,9 +28,20 @@ document.addEventListener('DOMContentLoaded', () => {
         messages.scrollTop = messages.scrollHeight;
     }
 
-    function handleUserMessage(message) {
-        const lowercasedMessage = message.toLowerCase();
-        const response = knowledgeBase[lowercasedMessage] || 'Извините, я не понимаю ваш запрос.';
-        addMessage(response, 'bot-message');
+    async function handleUserMessage(message) {
+        const response = await fetch('https://api.openai.com/v1/engines/davinci-codex/completions', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${apiKey}`
+            },
+            body: JSON.stringify({
+                prompt: message,
+                max_tokens: 150
+            })
+        });
+        const data = await response.json();
+        const botResponse = data.choices[0].text.trim();
+        addMessage(botResponse, 'bot-message');
     }
 });
