@@ -3,8 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const userInput = document.getElementById('user-input');
     const messages = document.getElementById('messages');
 
-    const apiKey = ''; // Замените на ваш API ключ
-
     sendButton.addEventListener('click', () => {
         const userText = userInput.value.trim();
         if (userText) {
@@ -29,19 +27,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     async function handleUserMessage(message) {
-        const response = await fetch('https://api.openai.com/v1/engines/davinci-codex/completions', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${apiKey}`
-            },
-            body: JSON.stringify({
-                prompt: message,
-                max_tokens: 150
-            })
-        });
-        const data = await response.json();
-        const botResponse = data.choices[0].text.trim();
-        addMessage(botResponse, 'bot-message');
+        try {
+            const response = await fetch('http://localhost:3000/api/message', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ message })
+            });
+
+            const data = await response.json();
+            addMessage(data.reply, 'bot-message');
+        } catch (error) {
+            console.error('Ошибка при обработке сообщения:', error);
+        }
     }
 });
