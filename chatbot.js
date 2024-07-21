@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let knowledgeBase = {};
 
     // Загрузка базы знаний
-    fetch('https://your-server-url/knowledge_base.json')
+    fetch('https://github.com/illiando/bot/blob/main/knowledge_base.json')
         .then(response => response.json())
         .then(data => {
             knowledgeBase = data;
