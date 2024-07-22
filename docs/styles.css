@@ -16,7 +16,7 @@
     padding: 10px;
     text-align: center;
     position: relative; /* Добавили для позиционирования лампочки */
-    border-radius: 30px
+    border-radius: 30px;
 }
 
 #chat-header::after {
