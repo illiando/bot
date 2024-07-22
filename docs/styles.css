@@ -40,8 +40,8 @@
     position: absolute;
     top: 25px; /* Отступ от верхней границы заголовка */
     right: 10px; /* Отступ от правой границы */
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     background-color: #ff4d4d;
     color: #fff;
     border: none;
