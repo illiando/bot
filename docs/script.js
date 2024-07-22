@@ -28,19 +28,29 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function fetchBotResponse(userMessage) {
-        fetch('https://coconut-mica-diplodocus.glitch.me', {  // Замените на ваш URL Glitch
+        fetch('https://coconut-mica-diplodocus.glitch.me/api/chat', {  // Замените на URL вашего сервера Glitch
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({ message: userMessage })
         })
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
         .then(data => {
-            appendMessage(data.response, 'bot-message');
+            if (data.response) {
+                appendMessage(data.response, 'bot-message');
+            } else {
+                appendMessage('Не удалось получить ответ от бота.', 'bot-message');
+            }
         })
         .catch(error => {
             console.error('Ошибка при получении ответа от бота:', error);
+            appendMessage('Произошла ошибка при запросе.', 'bot-message');
         });
     }
 });
