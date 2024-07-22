@@ -2,7 +2,7 @@
     position: fixed;
     bottom: 10px;
     right: 10px;
-    width: 350px; /* Увеличили ширину */
+    width: 350px; /* Уменьшили ширину */
     border: 1px solid #ccc;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     font-family: Arial, sans-serif;
