@@ -2,13 +2,23 @@ document.addEventListener('DOMContentLoaded', function() {
     const sendButton = document.getElementById('send-button');
     const userInput = document.getElementById('user-input');
     const chatMessages = document.getElementById('chat-messages');
-    const chatWidget = document.getElementById('chat-widget');
+    const chatWidget = document.getElementById('chat-widget'); // Переменная объявлена здесь
+    const minimizeButton = document.getElementById('minimize-button');
+
+    if (!chatWidget) {
+        console.error('Элемент с ID chat-widget не найден.');
+        return;
+    }
 
     sendButton.addEventListener('click', sendMessage);
     userInput.addEventListener('keypress', function(event) {
         if (event.key === 'Enter') {
             sendMessage();
         }
+    });
+
+    minimizeButton.addEventListener('click', function() {
+        chatWidget.classList.toggle('minimized');
     });
 
     function sendMessage() {
@@ -56,10 +66,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    //Добавляем анимацию через 5 секунд
+    // Добавляем анимацию через 5 секунд
     setTimeout(function() {
-        if (chatWidget) {
-            chatWidget.classList.add('show')
-        }
-    }, 5000); // 5 сек задержки
+        chatWidget.classList.add('show');
+    }, 5000); // 5 секунд задержки
 });
