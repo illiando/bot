@@ -54,4 +54,11 @@ document.addEventListener('DOMContentLoaded', function() {
             appendMessage('Произошла ошибка при запросе.', 'bot-message');
         });
     }
+
+    //Добавляем анимацию через 5 секунд
+    setTimeout(function() {
+        if (chatWidget) {
+            chatWidget.classList.add('show')
+        }
+    }, 5000); // 5 сек задержки
 });
