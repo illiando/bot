@@ -16,7 +16,6 @@
     padding: 10px;
     text-align: center;
     position: relative; /* Добавили для позиционирования лампочки */
-    border-radius: 50%;
 }
 
 #chat-header::after {
@@ -45,7 +44,6 @@
     overflow-y: auto;
     padding: 10px;
     background-color: #f9f9f9;
-    border-radius: 50%;
 }
 
 #chat-messages {
