@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const sendButton = document.getElementById('send-button');
     const userInput = document.getElementById('user-input');
     const chatMessages = document.getElementById('chat-messages');
+    const chatWidget = document.getElementById('chat-widget');
 
     sendButton.addEventListener('click', sendMessage);
     userInput.addEventListener('keypress', function(event) {
