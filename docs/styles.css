@@ -11,7 +11,7 @@
 }
 
 #chat-header {
-    background-color: #007bff;
+    background-color: #0c9196;
     color: #fff;
     padding: 10px;
     text-align: center;
@@ -25,7 +25,7 @@
     left: 10px;
     width: 10px;
     height: 10px;
-    background-color: green;
+    background-color: #e9e500;
     border-radius: 50%;
     animation: blink 1s infinite;
 }
@@ -59,7 +59,7 @@
 
 .user-message {
     align-self: flex-end;
-    background-color: #007bff;
+    background-color: #0c9196;
     color: #fff;
 }
 
@@ -85,7 +85,7 @@
     padding: 10px;
     margin-left: 5px;
     border: none;
-    background-color: #007bff;
+    background-color: #0c9196;
     color: #fff;
     cursor: pointer;
 }
