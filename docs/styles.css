@@ -33,23 +33,7 @@
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     position: relative;
-}
-
-/* Стили для кнопки сворачивания */
-#minimize-button {
-    position: absolute;
-    top: 25px; /* Отступ от верхней границы заголовка */
-    right: 10px; /* Отступ от правой границы */
-    width: 30px;
-    height: 30px;
-    background-color: #ff4d4d;
-    color: #fff;
-    border: none;
-    border-radius: 5px; /* Закругленные углы */
-    cursor: pointer;
-    font-size: 18px;
-    line-height: 30px;
-    text-align: center;
+    cursor: pointer; /* Указатель для кликабельного заголовка */
 }
 
 /* Стили для содержимого чата */

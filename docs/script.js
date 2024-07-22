@@ -1,24 +1,26 @@
+// script.js
+
 document.addEventListener('DOMContentLoaded', function() {
+    const chatHeader = document.getElementById('chat-header');
     const sendButton = document.getElementById('send-button');
     const userInput = document.getElementById('user-input');
     const chatMessages = document.getElementById('chat-messages');
     const chatWidget = document.getElementById('chat-widget');
-    const minimizeButton = document.getElementById('minimize-button');
 
-    if (!chatWidget) {
-        console.error('Элемент с ID chat-widget не найден.');
-        return;
-    }
+    // Показать виджет через 5 секунд после загрузки страницы
+    setTimeout(() => {
+        chatWidget.classList.add('show');
+    }, 5000);
+
+    chatHeader.addEventListener('click', () => {
+        chatWidget.classList.toggle('minimized');
+    });
 
     sendButton.addEventListener('click', sendMessage);
     userInput.addEventListener('keypress', function(event) {
         if (event.key === 'Enter') {
             sendMessage();
         }
-    });
-
-    minimizeButton.addEventListener('click', function() {
-        chatWidget.classList.toggle('minimized');
     });
 
     function sendMessage() {
@@ -65,9 +67,4 @@ document.addEventListener('DOMContentLoaded', function() {
             appendMessage('Произошла ошибка при запросе.', 'bot-message');
         });
     }
-
-    // Добавляем анимацию через 5 секунд
-    setTimeout(function() {
-        chatWidget.classList.add('show');
-    }, 5000); // 5 секунд задержки
 });
