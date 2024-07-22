@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function fetchBotResponse(userMessage) {
-        fetch('https://your-serverless-api.com/api/chat', {
+        fetch('https://coconut-mica-diplodocus.glitch.me', {  // Замените на ваш URL Glitch
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
