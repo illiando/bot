@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const sendButton = document.getElementById('send-button');
     const userInput = document.getElementById('user-input');
     const chatMessages = document.getElementById('chat-messages');
-    const chatWidget = document.getElementById('chat-widget'); // Переменная объявлена здесь
+    const chatWidget = document.getElementById('chat-widget');
     const minimizeButton = document.getElementById('minimize-button');
 
     if (!chatWidget) {
