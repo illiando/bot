@@ -27,30 +27,29 @@ document.addEventListener('DOMContentLoaded', function() {
         chatMessages.scrollTop = chatMessages.scrollHeight;
     }
 
-    function fetchBotResponse(userMessage) {
-        fetch('https://coconut-mica-diplodocus.glitch.me/api/chat', {  // Замените на URL вашего сервера Glitch
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ message: userMessage })
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(data => {
-            if (data.response) {
-                appendMessage(data.response, 'bot-message');
-            } else {
-                appendMessage('Не удалось получить ответ от бота.', 'bot-message');
-            }
-        })
-        .catch(error => {
-            console.error('Ошибка при получении ответа от бота:', error);
-            appendMessage('Произошла ошибка при запросе.', 'bot-message');
-        });
-    }
-});
+ function fetchBotResponse(userMessage) {
+    fetch('https://coconut-mica-diplodocus.glitch.me/api/chat', {  // Замените на ваш действительный URL Glitch
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ message: userMessage })
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        if (data.response) {
+            appendMessage(data.response, 'bot-message');
+        } else {
+            appendMessage('Не удалось получить ответ от бота.', 'bot-message');
+        }
+    })
+    .catch(error => {
+        console.error('Ошибка при получении ответа от бота:', error);
+        appendMessage('Произошла ошибка при запросе.', 'bot-message');
+    });
+}
