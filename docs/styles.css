@@ -38,8 +38,8 @@
 /* Стили для кнопки сворачивания */
 #minimize-button {
     position: absolute;
-    top: 50px;
-    right: 10px;
+    top: 50%; /* Вертикальное центрирование */
+    right: 10px; /* Отступ от правой границы */
     width: 30px;
     height: 30px;
     background-color: #ff4d4d;
@@ -50,6 +50,7 @@
     font-size: 18px;
     line-height: 30px;
     text-align: center;
+    transform: translateY(-50%); /* Центрирование по вертикали */
 }
 
 /* Стили для содержимого чата */
