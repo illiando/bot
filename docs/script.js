@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function fetchBotResponse(userMessage) {
-        fetch('https://coconut-mica-diplodocus.glitch.me/api/chat', {  // Замените на правильный URL
+        fetch('https://coconut-mica-diplodocus.glitch.me/api/chat', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return response.json();
         })
         .then(data => {
+            console.log('Response data:', data); // Для отладки
             if (data.response) {
                 appendMessage(data.response, 'bot-message');
             } else {
