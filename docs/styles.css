@@ -40,16 +40,16 @@
     position: absolute;
     top: 25px; /* Отступ от верхней границы заголовка */
     right: 10px; /* Отступ от правой границы */
-    width: 30px; /* Ширина кнопки */
-    height: 30px; /* Высота кнопки */
-    background-color: #ff4d4d; /* Цвет фона */
-    color: #fff; /* Цвет текста */
-    border: none; /* Без границы */
-    border-radius: 5px; /* Закруглённые углы */
-    cursor: pointer; /* Курсор при наведении */
-    font-size: 18px; /* Размер шрифта */
-    line-height: 30px; /* Высота строки для центрирования текста */
-    text-align: center; /* Выравнивание текста по центру */
+    width: 30px;
+    height: 30px;
+    background-color: #ff4d4d;
+    color: #fff;
+    border: none;
+    border-radius: 5px; /* Закругленные углы */
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 30px;
+    text-align: center;
 }
 
 /* Стили для содержимого чата */
